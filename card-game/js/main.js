@@ -1,17 +1,38 @@
 //Example fetch using pokemonapi.co
-document.querySelector('button').addEventListener('click', getFetch)
+let deckId = ''
 
-function getFetch(){
+if(!localStorage.setItem('deck id', deckId)){
+  localStorage.setItem('deck id', deckId)
+}
+
+fetch('https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1')
+  .then(res => res.json()) // parse response as JSON
+  .then(data => {
+    console.log(data)
+    deckId = data['deck_id']
+  })
+  .catch(err => {
+      console.log(`error ${err}`)
+  });
+
+
+
+
+document.querySelector('button').addEventListener('click', drawTwo)
+
+
+
+function drawTwo(){
   const choice = document.querySelector('input').value
-  
-  const url = 'https://pokeapi.co/api/v2/pokemon/'+choice
+
+  const url = `https://deckofcardsapi.com/api/deck/${deckId}/draw/?count=2`
 
   fetch(url)
-      .then(res => res.json()) // parse response as JSON
-      .then(data => {
-        console.log(data)
-      })
-      .catch(err => {
-          console.log(`error ${err}`)
-      });
+    .then(res => res.json()) // parse response as JSON
+    .then(data => {
+      console.log(data)
+    })
+    .catch(err => {
+        console.log(`error ${err}`)
+    });
 }
