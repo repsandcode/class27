@@ -1,10 +1,15 @@
 //Create a button that adds 1 to a botScore stored in localStorage 
+localStorage.setItem('botScore', 0)
 
 document.querySelector('button').addEventListener('click', addOne)
 
 function addOne() {
   const show = document.querySelector('h2')
+  
+  let botScoreVal = Number(localStorage.getItem('botScore'))
 
-  show.innerText = +(show) + 1
+  botScoreVal += 1
+
+  localStorage.setItem('botScore', botScoreVal)
+
 }
-
