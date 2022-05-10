@@ -34,12 +34,8 @@ function drawTwo(){
       document.querySelector('#player2').src = data.cards[1].image
 
       // get the value of the cards
-      let player1Val = Number(data.cards[0].value)
-      let player2Val = Number(data.cards[1].value)
-
-      // if the values are a number, change their data type
-      player1Val = convertToNum(player1Val) 
-      player2Val = convertToNum(player2Val) 
+      let player1Val = convertToNum(data.cards[0].value)
+      let player2Val = convertToNum(data.cards[1].value) 
       
 
       // get the h3 from the DOM
@@ -75,5 +71,5 @@ function convertToNum(val) {
   } else if (val === 'JACK'){
     return 11
   }
-  return val
+  return Number(val)
 }
