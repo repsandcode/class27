@@ -14,4 +14,3 @@ function getFetch(){
           console.log(`error ${err}`)
       });
 }
-
