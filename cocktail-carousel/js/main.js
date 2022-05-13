@@ -13,7 +13,7 @@ function getDrink() {
 
       let index = 0;
       const len = data.drinks.length
-      
+
       setInterval(function() {
         startCarousel();
       }, 3000);
@@ -22,7 +22,6 @@ function getDrink() {
         document.querySelector('h2').innerText = data.drinks[index].strDrink
         document.querySelector('img').src = data.drinks[index].strDrinkThumb
         document.querySelector('h3').innerText = data.drinks[index].strInstructions
-        console.log(index)
 
         index++
         
