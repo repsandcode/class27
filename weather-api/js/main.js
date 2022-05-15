@@ -14,8 +14,8 @@ if (navigator.geolocation) {
 
 
 function successCallback(position) {
-  latitude = (position.coords.latitude).toFixed(5)
-  longitude = (position.coords.longitude).toFixed(5)
+  latitude = position.coords.latitude
+  longitude = position.coords.longitude
 
   console.log(position.coords.latitude);
   console.log(position.coords.longitude);
@@ -27,9 +27,10 @@ function errorCallback(error){
   console.log(error.message);
 }
 
-const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone
-console.log(timezone)
-const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&timezone=${timezone}`
+// // timezone
+// const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone
+// console.log(timezone)
+const url = `https://www.metaweather.com/api/location/search/?lattlong=${latitude},${longitude}`
 const temperature = document.querySelector('#temperature')
 const windSpeed = document.querySelector('#wind-speed')
 const windDirection = document.querySelector('#wind-direction')
@@ -38,9 +39,9 @@ fetch(url)
   .then(res => res.json()) // parse response as JSON
   .then(data => {
     console.log(data)
-    temperature.innerText = data.current_weather.temperature
-    windSpeed.innerText = data.current_weather.windspeed + " km/h"
-    windDirection.innerText = data.current_weather.winddirection
+    // temperature.innerText = data.current_weather.temperature
+    // windSpeed.innerText = data.current_weather.windspeed + " km/h"
+    // windDirection.innerText = data.current_weather.winddirection
   })
   .catch(err => {
       console.log(`error ${err}`)
