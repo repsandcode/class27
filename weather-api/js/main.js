@@ -8,7 +8,7 @@ let longitude = 0
 // check if the user's browser is compatible for geolocation
 if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
-} else {
+} else { 
   alert('Your Browser does not support Geolocation')
 }
 
