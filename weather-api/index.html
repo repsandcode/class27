@@ -19,24 +19,26 @@
 	<body>
 
 		<div class="container">
-			<h1>weather or not</h1>
+			<h1 class="site-title">weather or not</h1>
 			
-			<section>
+			<section class="search-box">
 				<h2>Location</h2>
 				<input type="search" name="" id="location">
 				<input type="button" value="Search" id="search">
 			</section>
 			
 
-			<section>
+			<section class="weather-box">
 				<h3 id="loc-name">today's weather</h3>
-				<section>
-					<!-- <img src="" alt="" id="weather-icon"> -->
-					<span id="weather-code"></span>
-					<h1 id="temperature"></h1>
+
+				<h1 id="temperature"></h1>
+				<span id="weather-code"></span>
+				<!-- <img src="" alt="" id="weather-icon"> -->
+
+				<section class="weather-data">
 					<ul>
-						<li id="wind-speed"></li>
-						<li id="wind-direction"></li>
+						<li>Wind speed: <span id="wind-speed"></span></li>
+						<li>Wind direction: <span id="wind-direction"></span></li>
 						<li id="precip"></li>
 						<li id="humidity"></li>
 						<li id="feels-like"></li>
