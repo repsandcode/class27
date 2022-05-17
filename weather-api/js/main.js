@@ -1,5 +1,5 @@
 // event listener to run ONLY WHEN THERE IS AN LOCATION INPUT
-document.querySelector('#search').addEventListener('click', getFetch)
+// document.querySelector('#search').addEventListener('click', getFetch)
 
 // initialize the variables needed for URL queries
 let latitude = 0
@@ -33,6 +33,7 @@ const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone
 console.log(timezone)
 // url needed to get data
 const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&timezone=${timezone}`
+const locationName = document.querySelector('#loc-name')
 const weatherCode = document.querySelector('#weather-code')
 const temperature = document.querySelector('#temperature');
 const windSpeed = document.querySelector('#wind-speed');
