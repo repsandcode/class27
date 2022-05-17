@@ -34,19 +34,18 @@ console.log(timezone)
 // url needed to get data
 const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&timezone=${timezone}`
 const locationName = document.querySelector('#loc-name')
-const weatherCode = document.querySelector('#weather-code')
 const temperature = document.querySelector('#temperature');
+const tempUnit = document.querySelector('#temp-unit')
+const weatherCode = document.querySelector('#weather-code')
 const windSpeed = document.querySelector('#wind-speed');
 const windDirection = document.querySelector('#wind-direction');
-
-let tempUnit = document.querySelector('#temp-unit')
 
 fetch(url)
   .then(res => res.json()) // parse response as JSON
   .then(data => {
     console.log(data)
     weatherCode.innerText = weatherCodes(data.current_weather.weathercode)
-    temperature.innerText = data.current_weather.temperature
+    temperature.innerText = data.current_weather.temperature 
     windSpeed.innerText = data.current_weather.windspeed + " km/h"
     windDirection.innerText = data.current_weather.winddirection
   })

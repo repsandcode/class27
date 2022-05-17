@@ -32,8 +32,62 @@ li{
   text-align: center;
 }
 
-.weather-box h1{
-  font-size: 8rem;
+.weather-box h3{
+  font-size: 1rem;
+}
+
+.temp-box{
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem; 
+}
+
+.temperature{
+  display: flex;
+  flex-direction: column;
+}
+
+.temperature h1{
+  font-size: 4rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+.temperature span{
+  font-size: 1rem;
+}
+
+.temp-unit h1{
+  font-size: 1rem;
+  font-weight: 900;
+  margin-top: 1;
+  margin-left: .1rem;
+}
+
+.weather-data{
+  background: rgba(189, 207, 219, 0.448);
+  border-radius: 1rem;
+  margin: 3rem auto;
+  width: 80%;
+}
+
+.weather-data ul{
+  display: grid;
+  grid-template: auto / 1fr 1fr;
+  padding: 1.5rem;
+  text-align: left;
+}
+
+.weather-data li{
+  color: rgba(79, 79, 79, 0.812);
+  font-size: .8rem;
+  line-height: 1.4;
+}
+
+.weather-data li span{
+  color: rgb(46, 46, 46);
+  font-size: 1rem;
+  display: block;
 }
 /******************************************
 /* ADDITIONAL STYLES
