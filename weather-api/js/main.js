@@ -39,6 +39,8 @@ const temperature = document.querySelector('#temperature');
 const windSpeed = document.querySelector('#wind-speed');
 const windDirection = document.querySelector('#wind-direction');
 
+let tempUnit = document.querySelector('#temp-unit')
+
 fetch(url)
   .then(res => res.json()) // parse response as JSON
   .then(data => {
