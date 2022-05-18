@@ -19,13 +19,13 @@
 	<body>
 
 		<div class="container">
-			<!-- <h1 class="site-title">weather or not</h1>
+			<!-- <h1 class="site-title">weather or not</h1> -->
 			
 			<section class="search-box">
 				<h2>Location</h2>
 				<input type="search" name="" id="location">
 				<input type="button" value="Search" id="search">
-			</section> -->
+			</section>
 			
 
 			<section class="weather-box">
@@ -49,9 +49,10 @@
 					<ul>
 						<li>Wind speed <span id="wind-speed"></span></li>
 						<li>Wind direction <span id="wind-direction"></span></li>
-						<li id="precip"></li>
-						<li id="humidity"></li>
-						<li id="feels-like"></li>
+						<li>Precipitation <span id="precip"></span></li>
+						<li>Humidity <span id="humidity"></span></li>
+						<li>Feels like <span id="feels-like"></span></li>
+						<li>UV Index <span id="uv-index"></span></li>
 					</ul>
 				</section>
 			</section>
@@ -61,3 +62,28 @@
 		<script type="text/javascript" src="js/main.js"></script>
 	</body>
 </html>
+
+<!--
+
+"observation_time": "01:39 PM",
+        "temperature": 17,
+        "weather_code": 116,
+        "weather_icons": [
+            "https://assets.weatherstack.com/images/wsymbols01_png_64/wsymbol_0002_sunny_intervals.png"
+        ],
+        "weather_descriptions": [
+            "Partly cloudy"
+        ],
+        "wind_speed": 11,
+        "wind_degree": 340,
+        "wind_dir": "NNW",
+        "pressure": 1019,
+        "precip": 0,
+        "humidity": 43,
+        "cloudcover": 25,
+        "feelslike": 17,
+        "uv_index": 4,
+        "visibility": 16,
+        "is_day": "yes"
+
+-->

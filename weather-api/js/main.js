@@ -1,5 +1,5 @@
 // event listener to run ONLY WHEN THERE IS AN LOCATION INPUT
-// document.querySelector('#search').addEventListener('click', getFetch)
+document.querySelector('#search').addEventListener('click', getFetch)
 
 // initialize the variables needed for URL queries
 let latitude = 0
@@ -15,13 +15,8 @@ if (navigator.geolocation) {
 
 // get the latitude and longtitude of your current location
 function successCallback(position) {
-  latitude = position.coords.latitude.toFixed(2)
-  longitude = position.coords.longitude.toFixed(2)
-
-  console.log(position.coords.latitude);
-  console.log(position.coords.longitude);
-  console.log('this is the latitude (up to 5 decimal places) -> '+latitude);
-  console.log('this is the longitude (up to 5 decimal places) -> '+longitude);
+  latitude = position.coords.latitude
+  longitude = position.coords.longitude
 }
 
 function errorCallback(error){
@@ -39,6 +34,10 @@ const tempUnit = document.querySelector('#temp-unit')
 const weatherCode = document.querySelector('#weather-code')
 const windSpeed = document.querySelector('#wind-speed');
 const windDirection = document.querySelector('#wind-direction');
+const precipitation = document.querySelector('#precip')
+const humidity = document.querySelector('#humidity')
+const feelsLike = document.querySelector('#feels-like');
+const uvIndex = document.querySelector('#uv-index');
 
 fetch(url)
   .then(res => res.json()) // parse response as JSON
@@ -56,13 +55,24 @@ fetch(url)
 
 // THIS FETCH API will only run if button is clicked
 function getFetch(){
-  const choice = document.querySelector('input').value
-  const url = 'http://api.weatherstack.com/forecast?access_key=3d043bf2f574dcc5e44af77a9e104994&query='+choice
+  // const choice = document.querySelector('input').value
+
+  const url = `http://api.weatherstack.com/current?access_key=3d043bf2f574dcc5e44af77a9e104994&query=${latitude},${longitude}`
 
   fetch(url)
       .then(res => res.json()) // parse response as JSON
       .then(data => {
         console.log(data)
+        console.log(latitude)
+        console.log(longitude)
+        temperature.innerText = data.current.temperature 
+        weatherCode.innerText = data.current.weather_descriptions
+        windSpeed.innerText = data.current.wind_speed + " km/h"
+        windDirection.innerText = data.current.wind_dir
+        precipitation.innerText = data.current.precip + " mm"
+        humidity.innerText = data.current.humidity
+        feelsLike.innerText = data.current.feelslike
+        uvIndex.innerText = data.current.uv_index
       })
       .catch(err => {
           console.log(`error ${err}`)

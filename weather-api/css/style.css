@@ -76,6 +76,7 @@ li{
   grid-template: auto / 1fr 1fr;
   padding: 1.5rem;
   text-align: left;
+  row-gap: .5rem;
 }
 
 .weather-data li{
