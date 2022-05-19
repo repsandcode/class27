@@ -37,14 +37,12 @@ li{
 }
 
 .temp-box{
-  display: flex;
-  justify-content: center;
   margin-top: 4rem; 
 }
 
 .temperature{
   display: flex;
-  flex-direction: column;
+  justify-content: center;
 }
 
 .temperature h1{
@@ -55,13 +53,12 @@ li{
 
 .temperature span{
   font-size: 1rem;
+  font-weight: 900;
+  margin-top: .7rem;
 }
 
-.temp-unit h1{
+.temp-unit span{
   font-size: 1rem;
-  font-weight: 900;
-  margin-top: 1;
-  margin-left: .1rem;
 }
 
 .weather-data{
